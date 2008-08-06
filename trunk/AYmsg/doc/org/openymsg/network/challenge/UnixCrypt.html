@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//gnu.org///DTD XHTML 1.1 plus Target 1.0//EN" "../../../../resources/xhtml11-target10.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>UnixCrypt</title><script src="../../../../resources/gjdoc.js" type="text/javascript"><!-- this comment required for konqueror 3.2.2 --></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="generator" content="GNU Gjdoc Standard Doclet"/><meta name="keywords" content="org.openymsg.network.challenge.UnixCrypt class"/><meta name="keywords" content="crypt()"/><meta name="keywords" content="md5Crypt()"/><link rel="stylesheet" type="text/css" href="../../../../resources/gjdochtml-clean-layout.css" title="GNU Clean"/><link rel="stylesheet" type="text/css" href="../../../../resources/gjdochtml-clean-color1.css" title="GNU Clean"/></head><body class="content class" onload="if(parent.contentPageLoaded)parent.contentPageLoaded(document.title)"><table class="navbar div top"><tr><td class="navbar div top"><div class="navbar div top"><span class="navbar item enabled"><a href="../../../../overview-summary.html">Overview</a></span> <span class="navbar item enabled"><a href="package-summary.html">Package</a></span> <span class="navbar item active">Class</span> <span class="navbar item enabled"><a href="UnixCrypt-uses.html">Use</a></span> <span class="navbar item enabled"><a href="tree.html">Tree</a></span> <span class="navbar item enabled"><a href="../../../../alphaindex-1.html">Index</a></span> <span class="navbar item enabled"><a href="../../../../deprecated.html">Deprecated</a></span> <span class="navbar item enabled"><a href="../../../../about.html">About</a></span></div></td></tr><tr><td class="navi"><a href="../../../../org/openymsg/network/challenge/SHA1.html">Prev Class</a> | Next Class</td><td class="navi"><a href="../../../../index.html" title="Show in a frameset" target="_top">Frames</a> | <a href="UnixCrypt.html" title="Show without frames" target="_top">No Frames</a> </td></tr><tr><td class="navi">Summary: Nested | Field | <a href="#summary-methods">Method</a> | Constr</td><td class="navi">Detail: Nested | Field | <a href="#detail-methods">Method</a> | Constr</td></tr></table><div class="class title outer"><h3 class="class title-package">org.openymsg.network.challenge</h3><h1 class="class title-class">Class UnixCrypt</h1></div><div class="class inheritance-tree"><ul class="inheritance 0"><li class="inheritance 0"><code>java.lang.Object</code></li><li><ul class="inheritance 1"><li class="inheritance 1"><code>org.openymsg.network.challenge.UnixCrypt</code></li><li></li></ul></li></ul></div><hr/><div class="class synopsis outer"><div class="class synopsis declaration"><code>public final class <b class="class synopsis name">UnixCrypt</b></code></div><div class="class synopsis superclass"><code>extends java.lang.Object</code></div></div><hr/><div class="class description"> Note that this UNIX CRYPT implementation is a partial implementation only, as
+ it supports no other methods than MD5Crypt
+ 
+ Originally converted by the folks at www.orangefood.com
+ 
+ This class implements the popular MD5Crypt function as used by BSD and most
+ modern Un*x systems. It was basically converted from the C code write by
+ Poul-Henning Kamp. Here is his comment:
+ 
+ "THE BEER-WARE LICENSE" (Revision 42): &lt;phk@login.dknet.dk&gt; wrote this file.
+ As long as you retain this notice you can do whatever you want with this
+ stuff. If we meet some day, and you think this stuff is worth it, you can buy
+ me a beer in return. Poul-Henning Kamp
+</div><div class="taglet"><dl class="tag list"><dt class="tag section header"><b>Authors:</b></dt><dd class="tag item">G. der Kinderen, Nimbuzz B.V. guus@nimbuzz.com</dd><dd class="tag item">Poul-Henning Kamp, phk@login.dknet.dk</dd><dd class="tag item">S.E. Morris</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><a name="summary-methods" id="summary-methods"/><dl class="table container"><dd><table class="class summary" border="1" width="100%"><tr class="table header"><td colspan="2"><h2 class="table header">Method Summary</h2></td></tr><tr><td class="left" valign="top"><code class="synopsis">static String</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#crypt(String,String)">crypt</a>(String&nbsp;key, String&nbsp;salt)</code></dt><dd class="description"> Partial implementation of Unix CRYPT.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static String</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#md5Crypt(String,String)">md5Crypt</a>(String&nbsp;key, String&nbsp;salt)</code></dt><dd class="description"> Implementation of Unix MD5Crypt.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static String</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#md5Crypt(byte[],byte[])">md5Crypt</a>(byte[]&nbsp;key, byte[]&nbsp;salt)</code></dt><dd class="description"> Implementation of Unix MD5Crypt.</dd></dl></td></tr></table></dd></dl><a name="detail-methods" id="detail-methods"/><h2 class="section header">Method Details</h2><div class="section"><a name="crypt(String,String)" id="crypt(String,String)"/><div class="member detail outer"><h3 class="member detail name">crypt</h3><pre class="member detail synopsis">public static String crypt(String key,
+                           String salt)
+            throws NoSuchAlgorithmException</pre><blockquote class="member detail name"><div class="member detail description"> Partial implementation of Unix CRYPT. This implementation supports
+ MD5Crypt only.
+ 
+ (partial copy of <tt>man CRYPT(3)</tt><tt>)
+ 
+ The crypt() function performs password encryption based on the NBS Data
+ Encryption Standard (DES). Additional code has been added to deter key
+ search attempts and to use stronger hashing algorithms.
+ 
+ The first argument to crypt() is a NUL-terminated string, typically a us-
+ er's typed password. The second is in one of three forms: if it begins
+ with an underscore (`_') then an extended format is used in interpreting
+ both the key and the setting, as outlined below. If it begins with a
+ string character (`$') and a number then a different algorithm is used
+ depending on the number. At the moment a `$1' chooses MD5 hashing and a
+ `$2' chooses Blowfish hashing; see below for more information.
+ 
+ (...)
+ 
+ MD5 crypt
+ 
+ For MD5 crypt the version number, salt and the hashed password are 
+ separated by the `$' character.  The maximum length of a password is 
+ limited by the length counter of the MD5 context, which is about 2**64.
+ A valid MD5 password entry looks like this: 
+ </tt><tt>$1$caeiHQwX$hsKqOjrFRRN6K32OWkCBf1</tt>.
+ 
+ The whole MD5 password string is passed as setting for interpretation.
+</div><div class="parameter"><dl><dt class="header"><b>Parameters:</b></dt><dd class="item"><code class="name">key</code><span class="separator"> - </span><span class="description">typically a user's typed password.</span></dd><dd class="item"><code class="name">salt</code><span class="separator"> - </span><span class="description">The salt for this crypt, prepended by <tt>$1</tt> as 
+this method supports MD5 hashing only.</span></dd></dl></div><div class="member detail return list"><dl><dt class="member detail return header"><b>Returns:</b></dt><dd class="member detail return item">The Crypted representation of the 'key' argument.</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="md5Crypt(String,String)" id="md5Crypt(String,String)"/><div class="member detail outer"><h3 class="member detail name">md5Crypt</h3><pre class="member detail synopsis">public static String md5Crypt(String key,
+                              String salt)
+            throws NoSuchAlgorithmException</pre><blockquote class="member detail name"><div class="member detail description"> Implementation of Unix MD5Crypt.
+</div><div class="parameter"><dl><dt class="header"><b>Parameters:</b></dt><dd class="item"><code class="name">key</code><span class="separator"> - </span><span class="description">The to-be-crypted string, usually a password</span></dd><dd class="item"><code class="name">salt</code><span class="separator"> - </span><span class="description">The salt for the crypt (without a prepending <tt>$1$</tt>
+string).</span></dd></dl></div><div class="member detail return list"><dl><dt class="member detail return header"><b>Returns:</b></dt><dd class="member detail return item">The MD5Crypted representation of the 'key' argument.</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="md5Crypt(byte[],byte[])" id="md5Crypt(byte[],byte[])"/><div class="member detail outer"><h3 class="member detail name">md5Crypt</h3><pre class="member detail synopsis">public static String md5Crypt(byte[] key,
+                              byte[] salt)
+            throws NoSuchAlgorithmException</pre><blockquote class="member detail name"><div class="member detail description"> Implementation of Unix MD5Crypt.
+</div><div class="parameter"><dl><dt class="header"><b>Parameters:</b></dt><dd class="item"><code class="name">key</code><span class="separator"> - </span><span class="description">The to-be-crypted byte array, usually a password
+representation</span></dd><dd class="item"><code class="name">salt</code><span class="separator"> - </span><span class="description">The salt for the crypt (without a prepending <tt>$1$</tt>
+bytes).</span></dd></dl></div><div class="member detail return list"><dl><dt class="member detail return header"><b>Returns:</b></dt><dd class="member detail return item">The MD5Crypted representation of the 'crypteMe' argument.</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div></div><p class="navbar bottom spacer"> </p><table class="navbar div bottom"><tr><td><div class="navbar div top"><span class="navbar item enabled"><a href="../../../../overview-summary.html">Overview</a></span> <span class="navbar item enabled"><a href="package-summary.html">Package</a></span> <span class="navbar item active">Class</span> <span class="navbar item enabled"><a href="UnixCrypt-uses.html">Use</a></span> <span class="navbar item enabled"><a href="tree.html">Tree</a></span> <span class="navbar item enabled"><a href="../../../../alphaindex-1.html">Index</a></span> <span class="navbar item enabled"><a href="../../../../deprecated.html">Deprecated</a></span> <span class="navbar item enabled"><a href="../../../../about.html">About</a></span></div></td></tr></table></body></html>

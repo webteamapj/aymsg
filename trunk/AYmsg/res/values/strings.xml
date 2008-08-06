@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yahoo! Messenger</string>
+    <string name="TAG">AYmsg</string>
+    <string name="service_stared">AYmsg Service Stared!</string>
+	<string name="service_disconnected">AYmsg Service Disconnected!</string>
+	<string name="connecting">Connecting..</string>
+	<string name="status">Status:</string>
+	<string name="menu_change_status">Change Status</string>
+	<string name="menu_add_buddy">Add Buddy</string>
+	<string name="menu_close_tab">Close Tab</string>
+	<string name="custom_status">Custom Status:</string>
+	<string name="chk_custom_status">Use custom status</string>
+	<string name="default_status">Hello World. i'm if_bot. AYmsg library, Yahoo! Messenger on Android .. </string>
+	<string name="group">Group:</string>
+	<string name="yahoo_id">Yahoo! Id:</string>
+	<string name="custom_group">Custom Group:</string>
+	<string name="radio_group_existing">Use existing group</string>
+	<string name="radio_conf_existing">Use existing conference:</string>
+	<string name="radio_group_custom">Use custom group</string>
+	<string name="radio_conf_custom">Use custom conference:</string>
+	<string name="btn_add_buddy">Add Buddy</string>
+	<string name="btn_set_status">Set Status</string>
+	<string name="btn_cancel">Cancel</string>
+	<string name="btn_send">Send</string>
+	<string name="btn_allow">Allow</string>
+	<string name="btn_deny">Deny</string>
+	<string name="btn_exit">Exit</string>
+	<string name="btn_join">Join</string>
+	<string name="btn_no">No</string>
+	<string name="btn_create_conf">Invite Conference</string>
+	<string name="conference_room">Conference room:</string>
+	<string name="conference_message">Invitation Message:</string>
+	<string name="disconnected">You Have Been Disconnected</string>
+	<string name="dc_auth_failed">Authentication Failed</string>
+	<string name="dc_error">Because connection error</string>
+	<string name="dc_other_log">Because you had been logged in other place</string>
+
+</resources>

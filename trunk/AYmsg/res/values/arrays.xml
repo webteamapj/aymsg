@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Used in View/Spinner1.java -->
+    <array name="status">
+        <item>Available</item>
+        <item>Be Right Back</item>
+        <item>Busy</item>
+        <item>Not at Home</item>
+        <item>Not at Desk</item>
+        <item>Not in Office</item>
+        <item>On Phone</item>
+        <item>On Vacation</item>
+        <item>Out to Lunch</item>
+        <item>Stepped Out</item>
+        <item>Invisible</item>
+    </array>
+     <array name="buddy_menu_option">
+     	<item>Chat</item>
+        <item>Remove Budyy</item>
+        <item>Create Conference</item>
+    </array>
+       <array name="Group_menu_option">
+        <item>Remove Group</item>
+    </array>
+</resources>

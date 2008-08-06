@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.if_itb.client">
+    <application android:icon="@drawable/icon">
+        
+    <activity android:name="org.if_itb.ui.ClientMain">
+</activity>
+    <activity android:name="org.if_itb.ui.ClientLogin">
+</activity>
+<activity android:name="org.if_itb.ui.TestLayout">
+</activity>
+<service android:name="org.if_itb.aymsg.AYmsgService" android:process=":remote">
+<intent-filter>
+	<action android:name="org.if_itb.aymsg.IAYmsgService">
+	</action>
+	
+</intent-filter>
+</service>
+<activity android:name="org.if_itb.ui.ClientStatus">
+</activity><activity android:name="org.if_itb.ui.ClientBuddyAdd">
+</activity><activity android:name="org.if_itb.ui.ClientCreateConf">
+</activity></application>
+</manifest> 
